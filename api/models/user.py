@@ -3,6 +3,7 @@ from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseU
 from django.conf import settings
 from rest_framework.authtoken.models import Token
 
+
 class UserManager(BaseUserManager):
     """Manager for user profiles"""
 
@@ -54,6 +55,8 @@ class UserManager(BaseUserManager):
         return user
 
 # Inherit from AbstractBaseUser and PermissionsMixin:
+
+
 class User(AbstractBaseUser, PermissionsMixin):
     """Database model for users"""
     # As with any Django models, we need to define the fields
