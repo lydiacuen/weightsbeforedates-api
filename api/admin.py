@@ -3,7 +3,6 @@ from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 
 from .models.user import User
 from .models.buffpost import BuffPost
-from .models.comment import Comment
 
 class UserAdmin(BaseUserAdmin):
     ordering = ['id']

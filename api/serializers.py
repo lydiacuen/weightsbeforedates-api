@@ -2,7 +2,6 @@ from django.contrib.auth import get_user_model
 from rest_framework import serializers
 
 from .models.buffpost import BuffPost
-from .models.comment import Comment
 from .models.user import User
 
 class BuffPostSerializer(serializers.ModelSerializer):
