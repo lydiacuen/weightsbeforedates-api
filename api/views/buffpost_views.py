@@ -9,6 +9,7 @@ from ..serializers import BuffPostSerializer
 
 # Create your views here.
 
+
 class BuffPostsView(generics.ListCreateAPIView):
     permission_classes = (IsAuthenticated,)
     serializer_class = BuffPostSerializer
@@ -47,7 +48,8 @@ class BuffPostDetailView(generics.RetrieveUpdateDestroyAPIView):
         buffpost = get_object_or_404(BuffPost, pk=pk)
         # Only want to show owned buffposts?
         if request.user != buffpost.owner:
-            raise PermissionDenied('Unauthorized, you do not own this buffpost')
+            raise PermissionDenied(
+                'Unauthorized, you do not own this buffpost')
 
         # Run the data through the serializer so it's formatted
         data = BuffPostSerializer(buffpost).data
@@ -59,7 +61,8 @@ class BuffPostDetailView(generics.RetrieveUpdateDestroyAPIView):
         buffpost = get_object_or_404(BuffPost, pk=pk)
         # Check the buffpost's owner against the user making this request
         if request.user != buffpost.owner:
-            raise PermissionDenied('Unauthorized, you do not own this buffpost')
+            raise PermissionDenied(
+                'Unauthorized, you do not own this buffpost')
         # Only delete if the user owns the  buffpost
         buffpost.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
@@ -71,7 +74,8 @@ class BuffPostDetailView(generics.RetrieveUpdateDestroyAPIView):
         buffpost = get_object_or_404(BuffPost, pk=pk)
         # Check the buffpost's owner against the user making this request
         if request.user != buffpost.owner:
-            raise PermissionDenied('Unauthorized, you do not own this buffpost')
+            raise PermissionDenied(
+                'Unauthorized, you do not own this buffpost')
 
         # Ensure the owner field is set to the current user's ID
         request.data['buffpost']['owner'] = request.user.id

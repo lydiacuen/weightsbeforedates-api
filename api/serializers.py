@@ -7,14 +7,7 @@ from .models.user import User
 class BuffPostSerializer(serializers.ModelSerializer):
     class Meta:
         model = BuffPost
-        fields = ('id', 'content', 'image', 'owner')
-
-
-class CommentSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = BuffPost
-        fields = ('id', 'content', 'image', 'owner')
-
+        fields = '__all__'
 
 class UserSerializer(serializers.ModelSerializer):
     # This model serializer will be used for User creation
