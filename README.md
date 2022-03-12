@@ -5,6 +5,14 @@ Fitness Social Media App that tracks your workouts and users can motivate each o
 
 It is an app like Instagram where you are able to post your pictures or videos of your workouts and your comments. Other users are able to like and comment on your posts, and you are able to follow each other! 
 
+User Stories:
+As a user, I want to sign-up, sign-in, logout, and change password
+As a user, I want to create a profile
+As a user, I want to create a buff post
+As a user, I want to see my buff posts
+As a user, I want to see other users buff posts
+As a user, I want to comment and/or click on the "💪🏼" button on other buff posts
+
 Live URL Github Image:
 ![liveurlimage](https://i.imgur.com/v5Kc0cn.png)
 
