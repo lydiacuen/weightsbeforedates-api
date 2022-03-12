@@ -2,11 +2,18 @@ from django.contrib.auth import get_user_model
 from rest_framework import serializers
 
 from .models.buffpost import BuffPost
+from .models.profile import Profile
 from .models.user import User
 
 class BuffPostSerializer(serializers.ModelSerializer):
     class Meta:
         model = BuffPost
+        fields = '__all__'
+
+
+class ProfileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Profile
         fields = '__all__'
 
 class UserSerializer(serializers.ModelSerializer):

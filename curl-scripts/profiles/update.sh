@@ -1,14 +1,14 @@
 #!/bin/bash
 
-curl "http://localhost:8000/buffposts/${ID}/" \
+curl "http://localhost:8000/profiles/${ID}/" \
   --include \
   --request PATCH \
   --header "Content-Type: application/json" \
   --header "Authorization: Token ${TOKEN}" \
   --data '{
     "buffpost": {
-      "content": "'"${CONTENT}"'",
-      "image": "'"${IMAGE}"'"
+      "name": "'"${NAME}"'",
+      "about": "'"${ABOUT}"'"
     }
   }'
 
